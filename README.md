@@ -1,8 +1,10 @@
-  # Residual Learning based Light Weight Convolutional Neural Network for Automated Classification of the Retinal Diseases Using Optical Coherence Tomography Images (Under Review, Journal of Biomedical Optics, SPIE,July, 2020)
+  # Residual Learning based Light Weight Convolutional Neural Network for Automated Classification of the Retinal Diseases Using Optical Coherence Tomography Images
+  
+  ### (Under Review, Journal of Biomedical Optics, SPIE,July, 2020)
 
 Files Descritions
 
-Dataset : [Link] (https://data.mendeley.com/datasets/rscbjbr9sj/3)
+UCSD Dataset : [Link] (https://data.mendeley.com/datasets/rscbjbr9sj/3)
 Cite this dataset as : 
 Kermany, Daniel; Zhang, Kang; Goldbaum, Michael (2018), “Large Dataset of Labeled Optical Coherence Tomography (OCT) and Chest X-Ray Images”, Mendeley Data, v3
 
