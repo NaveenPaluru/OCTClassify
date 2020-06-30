@@ -14,7 +14,7 @@ MiniCNN_50_model.pth is the trained model.
 
 ## python files
 
-**trnMiniCNN.py** is the run file to train the model. **tstMiniCNN.py** is the testing file for evaluation , **MiniCNN.py** has model definition and **myDataset.py** is data iterator.
+**trnMiniCNN.py** is the run file to train the model. **tstMiniCNN.py** is the testing file for evaluation , **MiniCNN.py** has model definition and **myDataset.py** is data iterator. **F2train.csv** and **F2test.csv** are train and test splits respectively.
 
 
 #### Any query, please raise an issue or contact :
