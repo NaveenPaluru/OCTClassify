@@ -2,8 +2,6 @@
   
   ##### (Under Review, Journal of Biomedical Optics, SPIE,July, 2020)
 
-Files Descritions
-
 UCSD Dataset : [**Link**](https://data.mendeley.com/datasets/rscbjbr9sj/3)
 
 Cite this dataset as : 
