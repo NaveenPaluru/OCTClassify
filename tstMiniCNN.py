@@ -26,23 +26,16 @@ import pandas  as pd
 import scipy.io
 
 
-def test(directory):
-    
+def test(directory):    
     net = MiniCNN()
-    net.load_state_dict(torch.load(directory))
-    
+    net.load_state_dict(torch.load(directory))    
     config  = Config()
-    
-        
+    # Download the data and place it in ./UCSD Data/Data/        
     # make the data iterator for testing data . 
-    test_data = OCTTest('./UCSD Data/AuthorFold/F2test.csv','./UCSD Data/AuthorFold/Data/')
-    testloader  = torch.utils.data.DataLoader(test_data, batch_size=50, shuffle=False, num_workers=2)   
-    
-           
+    test_data = OCTTest('./F2test.csv','./UCSD Data/Data/')
+    testloader  = torch.utils.data.DataLoader(test_data, batch_size=50, shuffle=False, num_workers=2)           
     if config.gpu == True:
-        net.cuda(config.gpuid).eval()   
-        
-    
+        net.cuda(config.gpuid).eval()    
     for i,data in tqdm.tqdm(enumerate(testloader)):             
         # start iterations
         images,imtruth = Variable(data[0]),Variable(data[1])
@@ -66,16 +59,15 @@ def test(directory):
            
 if __name__ == '__main__':         
         
-    saveDir='./savedModels/'
+    saveDir='./'
         
     # if want to test on a specific model
-    directory=saveDir+"24Jun_1110pm_model/"+ "Ablation_50_model.pth"
+    directory=saveDir+"MiniCNN_50_model.pth"
     print('Loading the Model : ', directory)
     
     tmp, tmpl = test(directory)
     tmp  = tmp.numpy().astype(np.float64 )  
-    tmpl = tmpl.numpy().astype(np.float64)  
-      
+    tmpl = tmpl.numpy().astype(np.float64)      
     hh=np.reshape(tmp, (-1,1))      
     gg=np.reshape(tmpl,(-1,1))        
     matrix = metrics.confusion_matrix(gg,  hh, normalize='true')   
