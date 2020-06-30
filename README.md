@@ -4,7 +4,7 @@
 
 Files Descritions
 
-UCSD Dataset : [Link] (https://data.mendeley.com/datasets/rscbjbr9sj/3)
+UCSD Dataset : [**Link**](https://data.mendeley.com/datasets/rscbjbr9sj/3)
 Cite this dataset as : 
 Kermany, Daniel; Zhang, Kang; Goldbaum, Michael (2018), “Large Dataset of Labeled Optical Coherence Tomography (OCT) and the Chest X-Ray Images”, Mendeley Data, v3
 
