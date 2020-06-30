@@ -14,7 +14,7 @@ class Config :
         self.gpu       = True
         self.gpuid     = 1
         self.batchsize = 128
-        self.epochs    = 20
+        self.epochs    = 50
         
         
         
