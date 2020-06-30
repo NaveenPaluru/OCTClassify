@@ -39,10 +39,6 @@ config  = Config()
 # make the data iterator for training data
 train_data = OCTTrain('./F2train.csv','./UCSD Data/Data/')
 trainloader = torch.utils.data.DataLoader(train_data, batch_size=config.batchsize, shuffle=True, num_workers=2)
-
-
-
-
 print('----------------------------------------------------------')
 #%%
 # Create the object for the network
@@ -56,14 +52,13 @@ else:
 # Define the optimizer
 optimizer = optim.Adam(net.parameters(),lr=5e-4)
 scheduler = lr_scheduler.StepLR(optimizer, step_size=15, gamma=0.1)
-
 # Define the loss function
 criterion = nn.CrossEntropyLoss()
 
 
 # Iterate over the training dataset
-train_loss = []
 
+train_loss = []
 for j in range(config.epochs):  
     # Start epochs   
     runtrainloss = 0
