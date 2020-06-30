@@ -1,6 +1,6 @@
   # Residual Learning based Light Weight Convolutional Neural Network for Automated Classification of the Retinal Diseases Using Optical Coherence Tomography Images
   
-  ### (Under Review, Journal of Biomedical Optics, SPIE,July, 2020)
+  ##### (Under Review, Journal of Biomedical Optics, SPIE,July, 2020)
 
 Files Descritions
 
