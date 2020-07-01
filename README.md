@@ -13,7 +13,7 @@ MiniCNN_50_model.pth is the trained model.
 
 ## python files
 
-**trnMiniCNN.py** is the run file to train the model. **tstMiniCNN.py** is the testing file for evaluation , **MiniCNN.py** has model definition and **myDataset.py** is data iterator. **F2train.csv** and **F2test.csv** are train and test splits respectively.
+**trnMiniCNN.py** is the run file to train the model. **tstMiniCNN.py** is the testing file for evaluation , **MiniCNN.py** has model definition and **myDataset.py** is data iterator.
 
 ## Retinal Abnormalities along with Grad-Cam Visualization of the proposed approach.
 
