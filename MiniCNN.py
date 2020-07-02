@@ -164,9 +164,9 @@ if __name__=="__main__" :
     print('Parameters : ', pp)
     x = torch.rand(1,1,224,224).cuda(0)
     import time
-    t0= time.clock()
+    t0= time.time()
     y = net(x)
-    t1 = time.clock() - t0    
+    t1 = time.time() - t0    
     print('Elapsed Time in sec is ', t1 )    
     print('Output Size :' , y.size())
     size = (pp * 32) / (8*1024*1024)
