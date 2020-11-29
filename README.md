@@ -9,7 +9,7 @@ Kermany, Daniel; Zhang, Kang; Goldbaum, Michael (2018), “Large Dataset of Labe
 
 ## savedModels
 
-MiniCNN_50_model.pth is the trained model.
+Sample Testing/ model.pth is the trained model.
 
 ## python files
 
