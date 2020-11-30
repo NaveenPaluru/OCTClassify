@@ -1,4 +1,4 @@
-  # Residual Learning based Light Weight Convolutional Neural Network for Automated Detection of the Retinal Diseases Using Optical Coherence Tomography Images
+  # Retinal Disease Classification
   
   
 
