@@ -13,7 +13,7 @@ Sample Testing/ model.pth is the trained model.
 
 ## python files
 
-**trnMiniCNN.py** is the run file to train the model. **tstMiniCNN.py** is the testing file for evaluation , **MiniCNN.py** has model definition and **myDataset.py** is data iterator.
+Updated Soon.
 
 ## Retinal Abnormalities along with Grad-Cam Visualization of the proposed approach.
 
