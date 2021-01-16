@@ -35,7 +35,7 @@ def test(directory):
     
         
     # make the data iterator for testing data . 
-    test_data = OCTTest('./UCSD Data/AuthorFold/F2test.csv','./UCSD Data/AuthorFold/Data/')
+    test_data = OCTTest('./UCSD Data/AuthorFold/F1test.csv','./UCSD Data/AuthorFold/Data/')
     testloader  = torch.utils.data.DataLoader(test_data, batch_size=50 , shuffle=False, num_workers=2)   
     
            
@@ -66,10 +66,10 @@ def test(directory):
            
 if __name__ == '__main__':         
         
-    saveDir='./savedModels/'
+    saveDir='./Sample Testing/'
         
     # if want to test on a specific model
-    directory=saveDir+"24Jun_1110pm_model/"+ "Ablation_50_model.pth"
+    directory=saveDir+"model.pth"
     print('Loading the Model : ', directory)
     
     tmp, tmpl = test(directory)
