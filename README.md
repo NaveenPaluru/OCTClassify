@@ -12,9 +12,9 @@ Kermany, Daniel; Zhang, Kang; Goldbaum, Michael (2018), “Large Dataset of Labe
 
 Sample Testing/ model.pth is the trained model.
 
-## python files
+## Files
 
-Updated Soon.
+F1train.csv (~ 18 K entries) and F1test.csv (~ 90 K entries) contain the file names of images and corresponding labels to be loaded while training and testing.
 
 ## Retinal Abnormalities along with Grad-Cam Visualization of the proposed approach.
 
