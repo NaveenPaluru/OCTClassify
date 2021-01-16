@@ -42,7 +42,7 @@ weights = np.array([1.38, 4.27, 5.87, 1.00])
 
 
 # make the data iterator for training data
-train_data = OCTTrain('./UCSD Data/AuthorFold/F2train.csv','./UCSD Data/AuthorFold/Data/')
+train_data = OCTTrain('./UCSD Data/AuthorFold/F1train.csv','./UCSD Data/AuthorFold/Data/')
 trainloader = torch.utils.data.DataLoader(train_data, batch_size=config.batchsize, shuffle=True, num_workers=2)
 
 
