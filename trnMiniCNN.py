@@ -33,8 +33,8 @@ cwd=os.getcwd()
 directory=saveDir+datetime.now().strftime("%d%b_%I%M%P_")+'model'
 print('Model will be saved to  :', directory)
 
-# if not os.path.exists(directory):
-#     os.makedirs(directory)
+if not os.path.exists(directory):
+     os.makedirs(directory)
 
 config  = Config()
 
