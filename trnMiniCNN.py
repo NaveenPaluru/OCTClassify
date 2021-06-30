@@ -45,6 +45,10 @@ weights = np.array([1.38, 4.27, 5.87, 1.00])
 train_data = OCTTrain('./UCSD Data/AuthorFold/F1train.csv','./UCSD Data/AuthorFold/Data/')
 trainloader = torch.utils.data.DataLoader(train_data, batch_size=config.batchsize, shuffle=True, num_workers=2)
 
+val_data = OCTTrain('./UCSD Data/AuthorFold/F1val.csv','./UCSD Data/AuthorFold/Data/')
+valloader = torch.utils.data.DataLoader(val_data, batch_size=config.batchsize, shuffle=True, num_workers=2)
+
+
 
 
 
@@ -71,14 +75,14 @@ criterion = nn.CrossEntropyLoss()
 
 # Iterate over the training dataset
 train_loss = []
-# val_loss = []
-# acc = []
+val_loss = []
+acc = []
 
 
 for j in range(config.epochs):  
     # Start epochs   
     runtrainloss = 0
-    #runvalloss = 0
+    runvalloss = 0
     
     
     for i,data in tqdm.tqdm(enumerate(trainloader)): 
@@ -119,39 +123,39 @@ for j in range(config.epochs):
     # Take a step for scheduler
     scheduler.step()
     
-    # net.eval()
-    # total =0
-    # correct = 0
-    # for i,data in tqdm.tqdm(enumerate(valloader)): 
-    #     # start iterations
-    #     images,valLabels = Variable(data[0]),Variable(data[1])
+    net.eval()
+    total =0
+    correct = 0
+    for i,data in tqdm.tqdm(enumerate(valloader)): 
+         # start iterations
+         images,valLabels = Variable(data[0]),Variable(data[1])
         
     #     # ckeck if gpu is available
-    #     if config.gpu == True:
-    #         images  = images.cuda(config.gpuid )
-    #         valLabels = valLabels.cuda(config.gpuid)
+         if config.gpu == True:
+             images  = images.cuda(config.gpuid )
+             valLabels = valLabels.cuda(config.gpuid)
                     
     #     # make forward pass      
-    #     output = net(images)
+         output = net(images)
         
     #     # Find Accuracy
-    #     _, predicted = torch.max(F.softmax(output, dim=1), dim=1)
-    #     total += valLabels.size(0)
-    #     correct += (predicted == valLabels).sum().item()
+         _, predicted = torch.max(F.softmax(output, dim=1), dim=1)
+         total += valLabels.size(0)
+         correct += (predicted == valLabels).sum().item()
        
     #     #compute loss
-    #     loss   = criterion(output, valLabels)        
+         loss   = criterion(output, valLabels)        
                 
     #     # Accumulate loss for current minibatch
-    #     runvalloss += loss.item()
+         runvalloss += loss.item()
         
            
     # # print loss after every epoch
     
-    # print(' \n Validatn - Epoch {}/{}, loss:{:.4f}, Acc:{:.4f}'.format(j+1, 
-    #             config.epochs, runvalloss/len(valloader), correct / total))
-    # val_loss.append(runvalloss/len(valloader))
-    # acc.append(correct / total)
+     print(' \n Validatn - Epoch {}/{}, loss:{:.4f}, Acc:{:.4f}'.format(j+1, 
+                 config.epochs, runvalloss/len(valloader), correct / total))
+     val_loss.append(runvalloss/len(valloader))
+     acc.append(correct / total)
     
     print('----------------------------------------------------------')
     
@@ -165,8 +169,8 @@ for j in range(config.epochs):
 # Save the train stats
 
 np.save(directory + '/trnloss.npy',np.array(train_loss) )
-# np.save(directory + '/valloss.npy',np.array(val_loss) )
-# np.save(directory + '/acc.npy',    np.array(   acc    ) )
+np.save(directory + '/valloss.npy',np.array(val_loss) )
+np.save(directory + '/acc.npy',    np.array(   acc    ) )
 
 
 # plot the training loss
@@ -178,18 +182,18 @@ plt.xlabel('epochs')
 plt.ylabel('Train Loss ') 
 plt.legend(loc="upper left")  
 plt.show()
-# plt.figure()
-# plt.plot(x,val_loss,label='Validation')
-# plt.xlabel('epochs')
-# plt.ylabel('Val Loss ') 
-# plt.legend(loc="upper left")  
-# plt.show()
-# plt.figure()
-# plt.plot(x,acc,label='Validation')
-# plt.xlabel('epochs')
-# plt.ylabel('Val acc ') 
-# plt.legend(loc="upper left")  
-# plt.show()
+plt.figure()
+plt.plot(x,val_loss,label='Validation')
+plt.xlabel('epochs')
+plt.ylabel('Val Loss ') 
+plt.legend(loc="upper left")  
+plt.show()
+plt.figure()
+plt.plot(x,acc,label='Validation')
+plt.xlabel('epochs')
+plt.ylabel('Val acc ') 
+plt.legend(loc="upper left")  
+plt.show()
                       
 
 
